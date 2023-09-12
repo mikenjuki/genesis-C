@@ -24,5 +24,8 @@
     <ClCompile Include="Circumference.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hypotenuse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

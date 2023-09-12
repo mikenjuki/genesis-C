@@ -2,6 +2,7 @@
 
 int MathProgram();
 void Circumference();
+int HypotenuseCalc();
 
 int main()
 {
@@ -12,7 +13,8 @@ int main()
     printf("Program is below!\n");
 
     /*MathProgram();*/
-    Circumference();
+   /* Circumference();*/
+    HypotenuseCalc();
 
     return 0;
 }
