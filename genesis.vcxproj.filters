@@ -21,5 +21,8 @@
     <ClCompile Include="Math.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Circumference.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
