@@ -13,6 +13,7 @@ int TempConverter()
 	printf("\nEnter temperature symbol. K for kelvin, C for celsius: ");
 	scanfRA = scanf_s(" %c", &TempSymbol, 1);
 
+
 	// Check if TempSymbol is a character
 	if (!isalpha(TempSymbol))
 	{
@@ -34,12 +35,12 @@ int TempConverter()
 	if (TempSymbol == 'C' || TempSymbol == 'c')
 	{
 		temperature = number + TEMPABSOLUTE;
-		printf("The temperature is: %lf degrees kelvin.\n", temperature);
+		printf("The temperature is: %.2f degrees kelvin.\n", temperature);
 	}
 	else if(TempSymbol == 'K' || TempSymbol == 'k')
 	{
 		temperature = number - TEMPABSOLUTE;
-		printf("The temperature is: %lf degrees celsius.\n", temperature);
+		printf("The temperature is: %.2f degrees celsius.\n", temperature);
 	}
 	else {
 		printf("\nInvalid! Restart program.\n");
