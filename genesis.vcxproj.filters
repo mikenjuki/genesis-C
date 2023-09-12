@@ -27,5 +27,8 @@
     <ClCompile Include="Hypotenuse.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GradeSwitch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
