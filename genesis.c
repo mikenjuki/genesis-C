@@ -4,6 +4,7 @@ int MathProgram();
 void Circumference();
 int HypotenuseCalc();
 int GradeSwitch();
+int TempConverter();
 
 int main()
 {
@@ -16,7 +17,8 @@ int main()
     /*MathProgram();*/
    /* Circumference();*/
    /* HypotenuseCalc();*/
-    GradeSwitch();
+   /* GradeSwitch();*/
+    TempConverter();
 
     return 0;
 }

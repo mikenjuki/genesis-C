@@ -132,6 +132,7 @@
     <ClCompile Include="GradeSwitch.c" />
     <ClCompile Include="Hypotenuse.c" />
     <ClCompile Include="Math.c" />
+    <ClCompile Include="TempConverter.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
