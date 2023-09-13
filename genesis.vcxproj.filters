@@ -33,5 +33,8 @@
     <ClCompile Include="TempConverter.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Calculator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

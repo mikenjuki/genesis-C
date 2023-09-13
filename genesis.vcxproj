@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calculator.c" />
     <ClCompile Include="Circumference.c" />
     <ClCompile Include="genesis.c" />
     <ClCompile Include="GradeSwitch.c" />
