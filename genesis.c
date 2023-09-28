@@ -15,12 +15,12 @@ int main()
 
     printf("Program is below!\n");
 
-    /*MathProgram();*/
+    MathProgram();
    /* Circumference();*/
    /* HypotenuseCalc();*/
    /* GradeSwitch();*/
   /*  TempConverter();*/
-    Calculator();
+  /*  Calculator();*/
 
     return 0;
 }
