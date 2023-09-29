@@ -6,6 +6,7 @@ int HypotenuseCalc();
 int GradeSwitch();
 int TempConverter();
 int Calculator();
+int Loops();
 
 int main()
 {
@@ -15,12 +16,14 @@ int main()
 
     printf("Program is below!\n");
 
-    MathProgram();
+  /*  MathProgram();*/
    /* Circumference();*/
    /* HypotenuseCalc();*/
    /* GradeSwitch();*/
   /*  TempConverter();*/
   /*  Calculator();*/
+
+    Loops();
 
     return 0;
 }

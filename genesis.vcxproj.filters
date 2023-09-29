@@ -36,5 +36,8 @@
     <ClCompile Include="Calculator.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Loops.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
