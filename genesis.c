@@ -7,6 +7,7 @@ int GradeSwitch();
 int TempConverter();
 int Calculator();
 int Loops();
+int ArrayComp();
 
 int main()
 {
@@ -23,7 +24,10 @@ int main()
   /*  TempConverter();*/
   /*  Calculator();*/
 
-    Loops();
+   /* Loops();*/
+
+   ArrayComp();
+
 
     return 0;
 }
