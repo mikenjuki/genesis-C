@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+void sortArray(int array[], int size)
+{
+
+}
+
 int ArrayComp()
 {
 
@@ -35,6 +40,13 @@ int ArrayComp()
 		printf("\n%s\n", names[i]);
 	}
 
+
+	//Sorting an array
+	int numArray[] = {3, 2, 5, 8, 58, 9, 6, 7, 1};
+	int size = sizeof(numArray) / sizeof(numArray[0]);
+
+	//call array sorter
+	sortArray(numArray, size);
 
 	return 0;
 }

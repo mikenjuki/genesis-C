@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int MathProgram()
 {
@@ -23,10 +24,18 @@ int MathProgram()
 	for (year = 1; year <= 100; year++ )
 	{
 		amount = principal * pow(1.0 + rate, year);
-		printf("%4d%21.2f\n", year, amount);
+		/*printf("%4d%21.2f\n", year, amount);*/
 	}
 
 	/*printf("%lf\n", I);*/
+
+	//Testing Randomness
+	int i;
+
+	for (i = 1; i < 20; i++)
+	{
+		printf("%10d\n", 1 + (rand() % 6));
+	}
 
 	return 0;
 }

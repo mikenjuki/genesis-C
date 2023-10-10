@@ -17,7 +17,7 @@ int main()
 
     printf("Program is below!\n");
 
-  /*  MathProgram();*/
+    MathProgram();
    /* Circumference();*/
    /* HypotenuseCalc();*/
    /* GradeSwitch();*/
@@ -26,7 +26,7 @@ int main()
 
    /* Loops();*/
 
-   ArrayComp();
+ /*  ArrayComp();*/
 
 
     return 0;
