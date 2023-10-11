@@ -8,6 +8,7 @@ int TempConverter();
 int Calculator();
 int Loops();
 int ArrayComp();
+int SearchFunc();
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
 
     printf("Program is below!\n");
 
-    MathProgram();
+    //MathProgram();
    /* Circumference();*/
    /* HypotenuseCalc();*/
    /* GradeSwitch();*/
@@ -28,6 +29,7 @@ int main()
 
  /*  ArrayComp();*/
 
+    SearchFunc();
 
     return 0;
 }
