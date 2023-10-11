@@ -130,11 +130,13 @@
     <ClCompile Include="Arrays.c" />
     <ClCompile Include="Calculator.c" />
     <ClCompile Include="Circumference.c" />
+    <ClCompile Include="Diceroll.c" />
     <ClCompile Include="genesis.c" />
     <ClCompile Include="GradeSwitch.c" />
     <ClCompile Include="Hypotenuse.c" />
     <ClCompile Include="Loops.c" />
     <ClCompile Include="Math.c" />
+    <ClCompile Include="Phonebook.c" />
     <ClCompile Include="Search.c" />
     <ClCompile Include="TempConverter.c" />
   </ItemGroup>

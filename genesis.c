@@ -9,6 +9,7 @@ int Calculator();
 int Loops();
 int ArrayComp();
 int SearchFunc();
+int crapsGame();
 
 int main()
 {
@@ -18,7 +19,7 @@ int main()
 
     printf("Program is below!\n");
 
-    //MathProgram();
+   // MathProgram();
    /* Circumference();*/
    /* HypotenuseCalc();*/
    /* GradeSwitch();*/
@@ -29,7 +30,9 @@ int main()
 
  /*  ArrayComp();*/
 
-    SearchFunc();
+  /*  SearchFunc();*/
+
+    crapsGame();
 
     return 0;
 }

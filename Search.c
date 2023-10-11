@@ -31,6 +31,7 @@ int SearchFunc()
 		else
 		{
 			printf("\n Number %d could not be found.", num);
+			return 1;
 		}
 		
 	}

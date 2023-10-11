@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <time.h>
 
 int MathProgram()
 {
-	int num = 9;
+	/*int num = 9;
 	double A = sqrt(num);
 	double B = pow(2, num);
 	int C = round(3.145);
@@ -25,17 +26,36 @@ int MathProgram()
 	{
 		amount = principal * pow(1.0 + rate, year);
 		/*printf("%4d%21.2f\n", year, amount);*/
-	}
+	// }
 
 	/*printf("%lf\n", I);*/
 
 	//Testing Randomness
-	int i;
+//	int i;
 
-	for (i = 1; i < 20; i++)
+	/* for (i = 1; i < 20; i++)
 	{
 		printf("%10d\n", 1 + (rand() % 6));
 	}
+
+	*/
+
+	// Use a users input as seed to improve randomness
+	//int i;
+	//unsigned seed;
+
+	//printf("\nEnter seed value: ");
+ // //scanf_s("%u", &seed);
+	//seed = time(NULL); // seed set to current time in seconds
+	//srand(seed);
+
+	//printf("\nThe seed value is: %u\n", seed);
+
+	//for (i = 1; i <= 10; i++)
+	//{
+	//	printf("%10d\n", 1 + (rand() % 6));
+	//	printf("\n");
+	//}
 
 	return 0;
 }

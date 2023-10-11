@@ -45,5 +45,11 @@
     <ClCompile Include="Search.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Phonebook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Diceroll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
