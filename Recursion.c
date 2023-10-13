@@ -4,12 +4,16 @@ long factorial(long);
 int Recursion()
 {
 	printf("\nFrom recursion");
-	int i;
+	int i, userInput;
 
-	for (i = 1; i <= 10; i++)
+	printf("\nEnter a number you want a factorial of: ");
+	scanf_s("%d", &userInput);
+
+
+
+	for (i = 1; i <= userInput; i++)
 		printf("\n%3d! = %ld", i, factorial(i));
 
-	
 
 	return 0;
 }
