@@ -137,6 +137,7 @@
     <ClCompile Include="Loops.c" />
     <ClCompile Include="Math.c" />
     <ClCompile Include="Phonebook.c" />
+    <ClCompile Include="Quiz.c" />
     <ClCompile Include="Search.c" />
     <ClCompile Include="TempConverter.c" />
   </ItemGroup>

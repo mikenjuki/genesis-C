@@ -10,6 +10,7 @@ int Loops();
 int ArrayComp();
 int SearchFunc();
 int crapsGame();
+int QuizPrograms();
 
 int main()
 {
@@ -32,7 +33,9 @@ int main()
 
   /*  SearchFunc();*/
 
-    crapsGame();
+    //crapsGame();
+
+    QuizPrograms();
 
     return 0;
 }
