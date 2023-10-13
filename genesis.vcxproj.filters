@@ -54,5 +54,8 @@
     <ClCompile Include="Quiz.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Recursion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

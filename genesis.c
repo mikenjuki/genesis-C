@@ -11,6 +11,8 @@ int ArrayComp();
 int SearchFunc();
 int crapsGame();
 int QuizPrograms();
+int Recursion();
+
 
 int main()
 {
@@ -35,7 +37,9 @@ int main()
 
     //crapsGame();
 
-    QuizPrograms();
+    //QuizPrograms();
+    Recursion();
+
 
     return 0;
 }
