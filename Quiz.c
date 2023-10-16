@@ -1,41 +1,37 @@
 #include <stdio.h>
+#include <math.h>
 
-
-int isPalindrome(int);
+int integerPower(int, int);
 
 int QuizPrograms()
 {
 	printf("\nFrom QuizPrograms!\n");
-	//Int palindrome checker
 
-    int num;
+	int y;
+	double x;
 
-    printf("Enter a number: ");
-    scanf_s("%d", &num);
+	printf("\nEnter an integer: ");
+	scanf_s("%lf", &x);
 
-    if (isPalindrome(num))
-        printf("%d is a palindrome.\n", num);
-    else
-        printf("%d is not a palindrome.\n", num);
+	y = floor(x + 0.5);
+
+
+	printf("%3.2lf, %2d", x, y);
 
 	return 0;
 }
 
 
-int isPalindrome(int num) {
-    int originalNum = num;
-    int reversedNum = 0;
+int integerPower(int base, int exponent)
+{
+	int ans = 1;
 
-    // Reverse the number
-    while (num > 0) {
-        int remainder = num % 10;
-        printf("remainder is: %d \n", remainder);
-        reversedNum = reversedNum * 10 + remainder;
-        printf("reversedNum is: %d \n", reversedNum);
-        num /= 10;
-        printf("Num is: %d \n", num);
-    }
 
-    // Check if the number is a palindrome
-    return originalNum == reversedNum;
+	for (int i = 0; i < exponent; i++)
+	{
+		ans *= base;
+
+	}
+
+	return ans;
 }

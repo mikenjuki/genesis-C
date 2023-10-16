@@ -37,8 +37,8 @@ int main()
 
     //crapsGame();
 
-    //QuizPrograms();
-    Recursion();
+    QuizPrograms();
+  /*  Recursion();*/
 
 
     return 0;
