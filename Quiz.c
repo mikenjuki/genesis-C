@@ -1,37 +1,26 @@
 #include <stdio.h>
 #include <math.h>
 
-int integerPower(int, int);
+int findMultiple(int, int);
 
 int QuizPrograms()
 {
 	printf("\nFrom QuizPrograms!\n");
 
-	int y;
-	double x;
+	if (findMultiple(5, 10))
+	{
+		printf("\n 10 is a multiple of 5");
+	}
+	
 
-	printf("\nEnter an integer: ");
-	scanf_s("%lf", &x);
-
-	y = floor(x + 0.5);
-
-
-	printf("%3.2lf, %2d", x, y);
 
 	return 0;
 }
 
 
-int integerPower(int base, int exponent)
+int findMultiple(int num, int multiple)
 {
-	int ans = 1;
+	int check = multiple % num;
 
-
-	for (int i = 0; i < exponent; i++)
-	{
-		ans *= base;
-
-	}
-
-	return ans;
+	return (check == 0) ? 1 : 0;
 }
