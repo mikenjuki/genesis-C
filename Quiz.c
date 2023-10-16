@@ -1,47 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define SIZE 10
 
 int QuizPrograms()
 {
 	printf("\nFrom QuizPrograms!\n");
 
-	int questions = 10, i, correctAnswers = 0;
+	int n[SIZE] = { 19, 3, 15,7,11,9,13,5,17,1 };
+	int i, j;
 
-	printf("\nLets practice multiplication on a set of 10");
-	for (i = 1; i <= questions; i++)
+	printf("\n%s%13s%17s\n", "Element", "Value", "Histogram");
+	for (i = 0; i <= SIZE - 1; i++)
 	{
-		int num1 = 1 + rand() % 9;
-		int num2 = 1 + rand() % 9;
-		int correctAns = num1 * num2;
-
-		printf("\nQuestion %d: What is %d times %d? ", i, num1, num2);
-		int userAns;
-		scanf_s("%d", &userAns);
-
-		if (userAns == -1) {
-			printf("Terminating the program.\n");
-			break;
-		}
-
-
-		if (userAns == correctAns)
+		printf("%7d%13d       ", i, n[i]);
+		for (j = 1; j <= n[i]; j++)
 		{
-			printf("\nCorrect");
-			correctAnswers++;
+			printf(" %c", '*');
 		}
-		else
-		{
-			printf("\nWrong! Try again.");
-			while (userAns != correctAns)
-			{
-				printf("\nQuestion %d: What is %d times %d? ", i, num1, num2);
-				scanf_s("%d", &userAns);
-			}
-		}
-
+		printf("\n");
 	}
 
-	printf("You answered %d out of %d questions correctly.\n", correctAnswers, questions);
+
 
 	return 0;
 }
