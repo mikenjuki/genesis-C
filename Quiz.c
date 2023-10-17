@@ -7,18 +7,21 @@ int QuizPrograms()
 	printf("\nFrom QuizPrograms!\n");
 
 	
-	int i, sum = 0, x, y;
+	int sum = 0, y;
 
-	printf("\nEnter number of integers you want to sum: ");
-	scanf_s("%d", &x);
-	for (i = 1; i <= x; i++)
+	printf("\nThis program will sum any numbers. To end and print out sum, enter: 9999\n");
+	//scanf_s("%d", &x);
+
+
+	do
 	{
-		
 		printf("\nEnter a number: ");
 		scanf_s("%d", &y);
 		sum += y;
-	}
-	printf("The sum of the %d numbers you entered is: %d\n", x, sum);
+
+	} while (y != 9999);
+
+	printf("The sum of the numbers you entered is: %d\n", sum);
 
 	return 0;
 }
