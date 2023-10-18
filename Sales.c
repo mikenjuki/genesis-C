@@ -6,7 +6,7 @@ const double productPrices[NUM_PRODUCTS] = { 2.98, 4.50, 9.98, 4.49, 6.87 };
 double calcTotalSales(int sales[]);
 void trackProductSales();
 
-int QuizPrograms()
+int Salesprogram()
 {
 	printf("\nFrom QuizPrograms!\n");
 	trackProductSales();

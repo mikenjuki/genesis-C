@@ -12,34 +12,14 @@ int SearchFunc();
 int crapsGame();
 int QuizPrograms();
 int Recursion();
+int Patterns();
 
 
 int main()
 {
- /*   float item1 = 5.75;
-    printf("Item 1 price: %f ", item1);
- */
-
     printf("Program is below!\n");
 
-   // MathProgram();
-   /* Circumference();*/
-   /* HypotenuseCalc();*/
-   /* GradeSwitch();*/
-  /*  TempConverter();*/
-  /*  Calculator();*/
-
-   /* Loops();*/
-
- /*  ArrayComp();*/
-
-  /*  SearchFunc();*/
-
-    //crapsGame();
-
-    QuizPrograms();
-  /*  Recursion();*/
-
+    Patterns();
 
     return 0;
 }

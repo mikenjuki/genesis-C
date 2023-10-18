@@ -42,6 +42,18 @@ int Patterns()
 		printf("\n");
 	}
 
+
+	printf("\n");
+	//fourth pattern
+	for (i = x; i >= 0; i--)
+	{
+		for (j = 1; j <= i; j++)
+			printf(" %-*c",j - x, '*');
+
+		printf("\n");
+	}
+
+
 	return 0;
 }
 
