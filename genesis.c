@@ -19,7 +19,7 @@ int main()
 {
     printf("Program is below!\n");
 
-    Patterns();
+    QuizPrograms();
 
     return 0;
 }
