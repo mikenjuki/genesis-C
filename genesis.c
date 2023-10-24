@@ -13,13 +13,15 @@ int crapsGame();
 int QuizPrograms();
 int Recursion();
 int Patterns();
+int Bubble();
 
 
 int main()
 {
     printf("Program is below!\n");
 
-    QuizPrograms();
+   QuizPrograms();
+ 
 
     return 0;
 }
