@@ -1,35 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
+
+#define SIZE 11
 
 
-#define SIZE 10
-
-int addNumbers(const int [], int);
 
 int QuizPrograms()
 {
 	printf("\nFrom QuizPrograms!\n");
 
-	int x, a[SIZE] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int i, first, second, sum, sums[SIZE] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }, freq[SIZE] = { 0 };
 
-	x = addNumbers(a, SIZE);
-	printf("\nResult is: %d", x);
+	srand(time(NULL));
+
+	printf("%s%17s\n", "Face", "Frequency");
+
+
+
+	for (i = 0; i < 36000; i++)
+	{
+		first = 1 + rand() % 6;
+		second = 1 + rand() % 6;
+		sum = first + second;
+
+		if (sum >= 2 && sum <= 12)
+		{
+			++freq[sum - 2];
+		}
+	}
+
+	for (i = 0; i < SIZE; i++) {
+		printf("%3d%17d\n", sums[i], freq[i]);
+	}
 
 	return 0;
-   }
-
-
-
-int addNumbers(const int b[], int p)
-{
-	if (p == 1)
-	{
-		return b[0];
-	}
-	else
-	{
-		printf("\nNum: %d", p);
-		return b[p - 1] + addNumbers(b, p - 1);
-	}
 }
+
+
+
+
