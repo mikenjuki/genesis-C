@@ -22,7 +22,6 @@ int main()
 
    QuizPrograms();
  
-
     return 0;
 }
 

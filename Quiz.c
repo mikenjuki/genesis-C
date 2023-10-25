@@ -2,60 +2,34 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define SIZE 20
 
-int checkDuplicate(int [], int, int);
+#define SIZE 10
+
+int addNumbers(const int [], int);
 
 int QuizPrograms()
 {
 	printf("\nFrom QuizPrograms!\n");
 
-	int count = 0, userNum = 0, scanfR, check;
-	int numbers[SIZE] = {0};
+	int x, a[SIZE] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-	do
-	{
-		printf("\nEnter a number between 10 - 100 (inclusive): ");
-		scanfR = scanf_s("%d", &userNum);
-
-		if (scanfR != 1)
-		{
-			printf("\nExpected a number. Terminating!\n");
-			break;
-		}	
-		
-		if (!(userNum >= 10 && userNum <= 100))
-		{
-			printf("\n %d is not between 10 - 100!\n", userNum);
-			break;
-		}
-
-		check = checkDuplicate(numbers, SIZE, userNum);
-
-		if (check == 1) {
-			printf("%d is a duplicate. Please enter a different number.\n", userNum);
-		}
-		else {
-			numbers[count] = userNum;
-			count++;
-		}
-
-	} while (count < SIZE);
+	x = addNumbers(a, SIZE);
+	printf("\nResult is: %d", x);
 
 	return 0;
    }
 
-int checkDuplicate(int array[],int size, int num)
+
+
+int addNumbers(const int b[], int p)
 {
-	int i;
-
-	for ( i = 0; i < size; i++)
+	if (p == 1)
 	{
- 		if (array[i] == num)
-		{
-			return 1;
-		}
-
+		return b[0];
 	}
-	return 0;
+	else
+	{
+		printf("\nNum: %d", p);
+		return b[p - 1] + addNumbers(b, p - 1);
+	}
 }
