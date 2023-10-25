@@ -10,17 +10,18 @@ int Loops();
 int ArrayComp();
 int SearchFunc();
 int crapsGame();
-int QuizPrograms();
 int Recursion();
 int Patterns();
 int Bubble();
+int QuizProgram();
 
 
 int main()
 {
     printf("Program is below!\n");
+    printf("Quiz!\n");
 
-   QuizPrograms();
+    QuizProgram();
  
     return 0;
 }
