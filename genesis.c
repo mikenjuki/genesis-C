@@ -14,13 +14,15 @@ int Recursion();
 int Patterns();
 int Bubble();
 int QuizProgram();
+int Pointers();
 
 
 int main()
 {
     printf("Program is below!\n");
 
-    QuizProgram();
+ //QuizProgram();
+    Pointers();
  
     return 0;
 }

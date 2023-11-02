@@ -139,6 +139,7 @@
     <ClCompile Include="Math.c" />
     <ClCompile Include="Patterns.c" />
     <ClCompile Include="Phonebook.c" />
+    <ClCompile Include="Pointers.c" />
     <ClCompile Include="QuizProgram.c" />
     <ClCompile Include="Recursion.c" />
     <ClCompile Include="Sales.c" />
