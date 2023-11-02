@@ -19,7 +19,6 @@ int QuizProgram();
 int main()
 {
     printf("Program is below!\n");
-    printf("Quiz!\n");
 
     QuizProgram();
  

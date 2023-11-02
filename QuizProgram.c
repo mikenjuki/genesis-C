@@ -3,44 +3,25 @@
 #include <math.h>
 #include <time.h>
 
-#define SIZE 4
-#define PRODUCT_NUM 5 
+void callByRef(int *);
 
 int QuizProgram()
 {
-	printf("\nFrom QuizProgramnnnnns!\n");
+	printf("\nFrom QuizPrograms!\n");
 
-	double salesTable[SIZE][PRODUCT_NUM];
-	double productTotals[PRODUCT_NUM];
+	int number = 5;
+	int *numPtr;
+	numPtr = &number;
 
-
-	for (int i = 0; i < SIZE; i++)
-	{
-		for (int j = 0; j < PRODUCT_NUM; j++)
-		{
-			printf("\nEnter sales for Person: %d, for productID: %d\n", i + 1, j + 1);
-			scanf_s("%lf", &salesTable[i][j]);
-		}
-	}
-
-
-	printf("%7s\n", "Sales");
-	printf("-----------\n");
-	printf("%s\n", "ProductID");
-
-	for (int i = 0; i < SIZE; i++)
-	{
-		printf("%8d", i + 1);
-		for (int j = 0; j < PRODUCT_NUM; j++)
-		{
-			printf("%20.2lf", salesTable[i][j]);
-		}
-		printf("\n");
-	}
+	printf("\nThe original value of number is: %d", number);
+	printf("\nValue from pointer: %d", *numPtr);
+	callByRef(&number);
+	printf("\nThe new value of number is: %d", number);
 
 	return 0;
 }
 
-
-
-
+void callByRef(int *nPtr)
+{
+	*nPtr = *nPtr * *nPtr * *nPtr;
+}
