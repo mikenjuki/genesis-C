@@ -2,11 +2,14 @@
 #include <ctype.h>
 
 void charToUppper(char *);
-void printCharacters(char *);
+void printCharacters(const char *);
 
 int Pointers()
 {
-	char string[] = "characters and $32.98";
+	//char string[] = "characters and $32.98";
+	char string[100];
+	printf("Enter a sentence: ");
+	fgets(string, sizeof(string), stdin);
 
 	printf("\nThe original string is: %s", string);
 	charToUppper(string);
@@ -35,7 +38,8 @@ void printCharacters(const char *strPtr)
 
 	for (; *strPtr != '\0'; strPtr++)
 	{
-		printf("%c\n", *strPtr);
+	
+		printf("\n%c\n", *strPtr);
 	}
 
 }
