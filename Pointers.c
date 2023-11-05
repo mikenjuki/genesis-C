@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 void charToUppper(char *);
 void printCharacters(const char *);
 
 int Pointers()
 {
-	//char string[] = "characters and $32.98";
+
 	char string[100];
 	printf("Enter a sentence: ");
 	fgets(string, sizeof(string), stdin);
+
+	if (strlen(string) < 5)
+	{
+		printf("Sentence too short!");
+		return 1;
+	}
 
 	printf("\nThe original string is: %s", string);
 	charToUppper(string);
