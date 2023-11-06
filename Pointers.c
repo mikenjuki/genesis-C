@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
-void charToUppper(char *);
-void printCharacters(const char *);
+void charToUppper(char*);
+void printCharacters(const char*);
+int copyStr(char*);
 
 int Pointers()
 {
@@ -23,30 +25,63 @@ int Pointers()
 	printf("\nThe new string is: %s", string);
 	printCharacters(string);
 
+	copyStr(string);
+
 	return 0;
 }
 
-void charToUppper(char *strPtr)
+void charToUppper(char* strPtr)
 {
 	while (*strPtr != '\0')
 	{
 		if (islower(*strPtr))
 			*strPtr = toupper(*strPtr);
 
-			++strPtr;
+		++strPtr;
 	}
 
-	printf("\n\nPointer address is %p\n", &strPtr );
-	
+	printf("\n\nPointer address is %p\n", &strPtr);
+
 }
 
-void printCharacters(const char *strPtr)
+void printCharacters(const char* strPtr)
 {
 
 	for (; *strPtr != '\0'; strPtr++)
 	{
-	
+
 		printf("\n%c\n", *strPtr);
 	}
 
+}
+
+int copyStr(char* string)
+{
+	char* string2 = malloc(strlen(string) + 1);
+
+	if (string2 == NULL) {
+		// Handle memory allocation failure
+		printf("Memory allocation failed\n");
+		return 2;
+	}
+
+
+	for (int i = 0; i < strlen(string) + 1; i++)
+	{
+		string2[i] = string[i];
+
+	}
+
+	if (strlen(string2) == 0)
+	{
+		printf("You need to enter something.");
+		return 1;
+	}
+
+	string2[0] = tolower(string2[0]);
+
+	printf("Copied string: %s\n", string2);
+
+	free(string2);
+	return 0;
 }
