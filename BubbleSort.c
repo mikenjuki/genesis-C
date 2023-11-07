@@ -3,53 +3,58 @@
 
 #define SIZE 10
 
-void bubbleSort(int[], int);
+void bubbleSort(int *, const int);
 
 int Bubble()
 {
-	printf("\nFrom QuizPrograms!\n");
+	printf("\nFrom Bubble sort!\n");
 
 	int sortArray[SIZE] = { 2, 6, 4, 8, 10, 12, 89, 68, 45, 37 };
+	int i;
 
-	printf("\nBefore sorting: %d", sortArray[0]);
-	for (int i = 0; i < SIZE; i++)
-	{
-		printf("\n%3d", sortArray[i]);
-	}
+	printf("\nBefore sorting");
+	for ( i = 0; i < SIZE; i++)
+		printf("%3d", sortArray[i]);
+	
 
 	bubbleSort(sortArray, SIZE);
 
-	printf("\nAfter sorting: %d\n", sortArray[0]);
-	for (int i = 0; i < SIZE; i++)
-	{
-		printf("\n%3d", sortArray[i]);
-	}
+	printf("\nAfter sorting");
+	for (i = 0; i < SIZE; i++)
+		printf("%3d", sortArray[i]);
+
+	printf("\n");
 
 	return 0;
 }
 
-void bubbleSort(int sortArray[], int size)
+void bubbleSort(int *array, const int size)
 {
-	int j, pass, hold;
+	void swap(int *,int *);
+	int j, pass;
 
-	for (j = 0; j <= size - 1; j++)
+	for (pass = 0; pass < size - 1; pass++)
 		
 	{
-		for (pass = 1; pass < size - 1 - j; pass++)
+		for (j = 0; j < size - 1; j++)
 			
 		{
-			if (sortArray[pass] > sortArray[pass + 1])
+			if (array[j] > array[j + 1])
 			{
-				hold = sortArray[pass];
-				sortArray[pass] = sortArray[pass + 1];
-				sortArray[pass + 1] = hold;
-			
+				swap(&array[j], &array[j + 1]);
 			}
 		}
 	
 
 	}
 
+}
+
+void swap(int *element1Ptr, int *element2Ptr)
+{
+	int hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
 }
 
 //void sortColors(int* nums, int numsSize) {

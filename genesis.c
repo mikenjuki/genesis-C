@@ -22,8 +22,9 @@ int main()
     printf("Program is below!\n");
 
  //QuizProgram();
-    Pointers();
- 
+   // Pointers();
+    Bubble();
+
     return 0;
 }
 
