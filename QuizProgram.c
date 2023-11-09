@@ -12,13 +12,7 @@ int QuizProgram()
 
 	printf("\nPointers and arrays\n");
 
-	char string1[10], * string2 = "Hello", string3[10], string4[] = "You";
-
-	copy1(string1, string2);
-	printf("string1 = %s\n", string1);
-
-	copy2(string3, string4);
-	printf("string3 = %s\n", string3);
+	printf("This is a text\twith a tab.\n");
 
 	return 0;
 }

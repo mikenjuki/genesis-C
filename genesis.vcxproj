@@ -130,6 +130,7 @@
     <ClCompile Include="Arrays.c" />
     <ClCompile Include="BubbleSort.c" />
     <ClCompile Include="Calculator.c" />
+    <ClCompile Include="CardShuffle.c" />
     <ClCompile Include="Circumference.c" />
     <ClCompile Include="Diceroll.c" />
     <ClCompile Include="genesis.c" />

@@ -15,15 +15,19 @@ int Patterns();
 int Bubble();
 int QuizProgram();
 int Pointers();
+int CardShuffle();
 
 
 int main()
 {
     printf("Program is below!\n");
 
- QuizProgram();
+    //QuizProgram();
    // Pointers();
    //  Bubble();
+
+    CardShuffle();
+
 
     return 0;
 }
