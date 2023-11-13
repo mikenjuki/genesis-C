@@ -72,5 +72,8 @@
     <ClCompile Include="CardShuffle.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BubblePointer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
