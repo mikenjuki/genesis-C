@@ -16,6 +16,7 @@ int Bubble();
 int QuizProgram();
 int Pointers();
 int CardShuffle();
+int BubblePointer();
 
 
 int main()
@@ -26,8 +27,8 @@ int main()
    // Pointers();
    //  Bubble();
 
-    CardShuffle();
-
+ /*   CardShuffle();*/
+    BubblePointer();
 
     return 0;
 }
