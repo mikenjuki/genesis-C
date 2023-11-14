@@ -41,7 +41,6 @@ void bubble(int array[], const int size, int(*compare)(int, int))
 {
 
 	int pass, j;
-	void swap(int*, int*); //principle of least priviledge
 
 	for (pass = 1; pass < size; pass++)
 		for (j = 0; j < size - 1; j++)
@@ -49,14 +48,6 @@ void bubble(int array[], const int size, int(*compare)(int, int))
 				swap(&array[j], &array[j + 1]);
 
 }
-//you can call a function in another source file
-//
-//void swap(int* element1Ptr, int* element2Ptr)
-//{
-//	int hold = *element1Ptr;
-//	*element1Ptr = *element2Ptr;
-//	*element2Ptr = hold;
-//}
 
 int ascending(int a, int b)
 {
