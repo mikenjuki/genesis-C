@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
 #define FSIZE 13
 #define SSIZE 4
@@ -43,7 +44,9 @@ void shuffle(int cdeck [][FSIZE])
 
 }
 
-void deal(const int cdeck [][FSIZE], const char *cface[], const char *csuit[])
+// deal 5 card poker hand
+/* 
+void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
 {
 	int card, row, column;
 	for (card = 1; card <= 52; card++)
@@ -54,3 +57,42 @@ void deal(const int cdeck [][FSIZE], const char *cface[], const char *csuit[])
 				
 
 }
+*/
+
+
+void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
+{
+	int card, row, column;
+	int cardsDealt = 0;
+	bool pairCheck = false;
+	int pairCounter[FSIZE] = { 0 };
+
+	for (card = 1; card <= 5; card++)
+	{
+		for (row = 0; row <= SSIZE - 1 && cardsDealt < 5; row++)
+		{
+			for (column = 0; column <= FSIZE - 1 && cardsDealt < 5; column++)
+			{
+				if (cdeck[row][column] == card)
+				{
+					printf("%d: %5s of %-8s%c", column, cface[column], csuit[row], card % 2 == 0 ? '\n' : '\t');
+					++pairCounter[column]; 
+					++cardsDealt;
+
+					if (pairCounter[column] == 2)
+					{
+						pairCheck = true;
+					}
+				}
+			}
+
+		}
+	}
+
+	if (pairCheck)
+	{
+	  printf("\nA pair was found\n");
+	}
+	
+}
+
