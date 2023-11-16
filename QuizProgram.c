@@ -25,5 +25,13 @@ int QuizProgram()
 	for (i = 0; i <= SIZE - 1; i++)
 		printf("%5u", *(vPtr + i));
 
+	printf("\npointer/offset notation with array name\n");
+	for (i = 0; i <= SIZE - 1; i++)
+		printf("%5u", *(values + i));
+
+	printf("\nSubscripting the pointer\n");
+	for (i = 0; i <= SIZE - 1; i++)
+		printf("%5u", vPtr[i]);
+
 	return 0;
 }
