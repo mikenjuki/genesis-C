@@ -33,5 +33,18 @@ int QuizProgram()
 	for (i = 0; i < SIZE; i++)
 		printf("%5u", vPtr[i]);
 
+	printf("\nReferencing: \n");
+	printf("%5u", *(vPtr + 3));
+
+	printf("\nsize of unsigned int is:%zu", sizeof(vPtr[1]));
+
+	vPtr = values;
+
+	//vPtr -= 4;
+
+	//000000E30B2FFBC8 + 4 * 4
+
+	printf("\n%p", vPtr);
+
 	return 0;
 }
