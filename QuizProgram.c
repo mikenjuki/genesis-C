@@ -11,15 +11,19 @@ int QuizProgram()
 
 	unsigned int values[SIZE] = {2, 4, 6, 8, 10};
 
-	unsigned int vPtr;
+	unsigned int *vPtr;
 	int i;
 
 	for (i = 0; i < SIZE; i++)
 		printf("%5u", values[i]);
 
 	vPtr = values;
-	printf("\n%p", (void *)vPtr);
+	vPtr = &values[0];
+	printf("\nAddress of array values: %p\n", (void *)vPtr);\
 
+	printf("\nArrays printed using pointer/offset notation\n");
+	for (i = 0; i <= SIZE - 1; i++)
+		printf("%5u", *(vPtr + i));
 
 	return 0;
 }
