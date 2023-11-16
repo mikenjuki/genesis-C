@@ -23,12 +23,12 @@ int main()
 {
     printf("Program is below!\n");
 
-    //QuizProgram();
+    QuizProgram();
    // Pointers();
    //  Bubble();
 
  /*   CardShuffle();*/
-    BubblePointer();
+   // BubblePointer();
 
     return 0;
 }
