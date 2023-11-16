@@ -22,15 +22,15 @@ int QuizProgram()
 	printf("\nAddress of array values: %p\n", (void *)vPtr);\
 
 	printf("\nArrays printed using pointer/offset notation\n");
-	for (i = 0; i <= SIZE - 1; i++)
+	for (i = 0; i < SIZE; i++)
 		printf("%5u", *(vPtr + i));
 
 	printf("\npointer/offset notation with array name\n");
-	for (i = 0; i <= SIZE - 1; i++)
+	for (i = 0; i < SIZE; i++)
 		printf("%5u", *(values + i));
 
 	printf("\nSubscripting the pointer\n");
-	for (i = 0; i <= SIZE - 1; i++)
+	for (i = 0; i < SIZE; i++)
 		printf("%5u", vPtr[i]);
 
 	return 0;
