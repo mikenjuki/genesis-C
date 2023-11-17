@@ -44,7 +44,7 @@ void shuffle(int cdeck [][FSIZE])
 
 }
 
-// deal 5 card poker hand
+
 /* 
 void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
 {
@@ -59,7 +59,7 @@ void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
 }
 */
 
-
+// deal 5 card poker hand
 void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
 {
 	int card, row, column;
