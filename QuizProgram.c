@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int QuizProgram()
 {
 	printf("\nFrom QuizPrograms!\n");
@@ -20,9 +21,11 @@ int QuizProgram()
 	//	puts( "\nThe line entered was:" );
 	//	puts( sentence );
 	
-	const char* s1 = "Happy New Year";
+	const char* s1 = "Happy New Year Mike";
 	const char* s2 = "Happy New Year";
 	const char* s3 = "Happy Holidays";
+	char* nextToken = NULL;
+
 
 	int s1Len = strlen(s1);
 	int s2Len = strlen(s2);
@@ -39,5 +42,21 @@ int QuizProgram()
 	printf("\nword is: %s\n", strrchr(s1, c));
 
 
+
+
+
+	char firstString[20] = "str";
+	const char* secondString = "ing";
+
+	strcat_s(firstString, sizeof(firstString), secondString);
+
+	printf("Result: %s\n", firstString);
+
+	char errMsg[100];
+	strerror_s(errMsg, sizeof(errMsg), 2);
+
+	printf("%s\n", errMsg);
 	return 0;
 }
+
+
