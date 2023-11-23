@@ -1,48 +1,43 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
-
-#define SIZE 5
+#include <string.h>
 
 int QuizProgram()
 {
 	printf("\nFrom QuizPrograms!\n");
+	
+	//char c, sentence[80];
+	//int i = 0;
 
-	unsigned int values[SIZE] = {2, 4, 6, 8, 10};
+	//puts( "Enter a line of text:" );
 
-	unsigned int *vPtr;
-	int i;
+	//while ((c = getchar()) != '\n' )
+	//{
 
-	for (i = 0; i < SIZE; i++)
-		printf("%5u", values[i]);
+	//	sentence[i++] = c;
+	//}
 
-	vPtr = values;
-	vPtr = &values[0];
-	printf("\nAddress of array values: %p\n", (void *)vPtr);\
+	//	sentence[i] = '\0';
+	//	puts( "\nThe line entered was:" );
+	//	puts( sentence );
+	
+	const char* s1 = "Happy New Year";
+	const char* s2 = "Happy New Year";
+	const char* s3 = "Happy Holidays";
 
-	printf("\nArrays printed using pointer/offset notation\n");
-	for (i = 0; i < SIZE; i++)
-		printf("%5u", *(vPtr + i));
+	int s1Len = strlen(s1);
+	int s2Len = strlen(s2);
+	int s3Len = strlen(s3);
 
-	printf("\npointer/offset notation with array name\n");
-	for (i = 0; i < SIZE; i++)
-		printf("%5u", *(values + i));
+	printf("s1: %d\ns2: %d\ns3: %d", s1Len, s2Len, s3Len);
 
-	printf("\nSubscripting the pointer\n");
-	for (i = 0; i < SIZE; i++)
-		printf("%5u", vPtr[i]);
+	int val = strcmp(s1, s3);
+	printf("\nval is: %d\n", val);
 
-	printf("\nReferencing: \n");
-	printf("%5u", *(vPtr + 3));
+	int c = 'N';
 
-	printf("\nsize of unsigned int is: %zu", sizeof(vPtr[1]));
 
-	vPtr = &values[4];
+	printf("\nword is: %s\n", strrchr(s1, c));
 
-	vPtr -= 4;
-
-	printf("\n%u", *vPtr);
 
 	return 0;
 }
