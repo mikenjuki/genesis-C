@@ -5,92 +5,101 @@
 #include <stdlib.h>
 
 void createSentences();
+void pigLatin();
 
 int QuizProgram()
 {
 	printf("\nFrom QuizPrograms!\n");
-	srand(time(NULL));
-	
-	int c, x, y, z;
-	double d, e, f;
-	char* ptr;
-	char s1[100], s2[100];
+	// srand(time(NULL));
 
-	c = toupper(77);
-
-	
-	printf("\v\v");
-	printf("%s\n%s%s\n", "isDigit check", isdigit(c) ? "c is a" : "c is not a", "digit");
+	/*printf("\v\v");
+	printf("sentences\n");*/
+	// createSentences();
 
 	printf("\v\v");
-	char* str = "-12345678";
-	char* endPtr;
-
-	x = strtol(str, &endPtr, 10);
-	printf("New long is: %ld \n", (long)x);
-
-	printf("\v\v");
-	int i = 0;
-	/*puts("Type something: ");
-	while ((y = getchar()) != '\n')
-		s1[i++] = y;
-
-	s1[i] = '\0';
-	puts("You entered: ");
-	puts(s1);
-
-	memmove(s2, s1, strlen(s1) + 1);
-	puts("Value in s2: ");
-	puts(s2);*/
-
-	printf("\v\v");
-	printf("sentences\n");
-	createSentences();
-
+	printf("Pig Latin\n");
+	pigLatin();
 	return 0;
 }
 
-void createSentences()
+//void createSentences()
+//{
+//	char* article[] = {"the", "a", "one", "some", "many"};
+//	char* noun[] = {"boy", "girl", "dog", "town", "car"};
+//	char* verb[] = {"drove", "jumped", "ran", "walked", "skipped"};
+//	char* preposition[] = {"to", "from", "over", "under", "on"};
+//
+//	srand((unsigned int)time(NULL));
+//
+//	int i, j;
+//	for (j = 0; j < 6; j++)
+//	{
+//		int count = 0;
+//		for (i = 0; i < 6; i++)
+//		{
+//			int word = rand() % 5;
+//			switch (count)
+//			{
+//			case 0:
+//				printf("%s\t", article[word]);
+//				break;
+//			case 1:
+//				printf("%s\t", noun[word]);
+//				break;
+//			case 2:
+//				printf("%s\t", verb[word]);
+//				break;
+//			case 3:
+//				printf("%s\t", preposition[word]);
+//				break;
+//			case 4:
+//				printf("%s\t", article[word]);
+//				break;
+//			case 5:
+//				printf("%s\t", noun[word]);
+//				break;
+//			default:
+//				break;
+//			}
+//		count++;
+//		}
+//		printf("\n");
+//	}
+//}
+
+
+void pigLatin()
 {
-	char* article[] = {"the", "a", "one", "some", "many"};
-	char* noun[] = {"boy", "girl", "dog", "town", "car"};
-	char* verb[] = {"drove", "jumped", "ran", "walked", "skipped"};
-	char* preposition[] = {"to", "from", "over", "under", "on"};
+	void printLatinWord(const char*);
 
-	srand((unsigned int)time(NULL));
+	char* words[] = {"jump", "computer", "drove", "jumped", "girl", "dog", "town" };
+	int size = sizeof(words)/ sizeof(words[0]);
 
-	int i, j;
-	for (j = 0; j < 6; j++)
+	for (int i = 0; i < size; i++)
 	{
-		int count = 0;
-		for (i = 0; i < 6; i++)
-		{
-			int word = rand() % 5;
-			switch (count)
-			{
-			case 0:
-				printf("%s\t", article[word]);
-				break;
-			case 1:
-				printf("%s\t", noun[word]);
-				break;
-			case 2:
-				printf("%s\t", verb[word]);
-				break;
-			case 3:
-				printf("%s\t", preposition[word]);
-				break;
-			case 4:
-				printf("%s\t", article[word]);
-				break;
-			case 5:
-				printf("%s\t", noun[word]);
-				break;
-			default:
-				break;
-			}
-		count++;
+		char modifiedWord[100];
+		// char firstChar = words[i][0];
+		char firstChar = *(*(words + i));
+	
+
+		
+		if (strlen(words[i]) > 2) {
+			char* remaining = words[i] + 1;
+		
+			strcpy_s(modifiedWord, sizeof(modifiedWord), remaining);
+			strncat_s(modifiedWord, sizeof(modifiedWord), &firstChar, 1);
+			strcat_s(modifiedWord, sizeof(modifiedWord), "ay");
+	
+
+			printLatinWord(modifiedWord);
 		}
-		printf("\n");
+
+
 	}
+
+
+}
+
+void printLatinWord(const char* modifiedWord) {
+	printf("Pig Latin word: %s\n", modifiedWord);
 }
