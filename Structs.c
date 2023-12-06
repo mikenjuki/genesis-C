@@ -19,6 +19,8 @@ int Structs()
 
 	//access struct instance members in different ways
 	printf("\v%s%s%s\n", a.face, " of ", a.suit);
+	printf("\v%s%s%s\n", aPtr->face, " of ", aPtr->suit);
+	printf("\v%s%s%s\n", (*aPtr).face, " of ", (*aPtr).suit);
 
 	return 0;
 }
