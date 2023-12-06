@@ -17,13 +17,15 @@ int QuizProgram();
 //int Pointers();
 //int CardShuffle();
 //int BubblePointer();
+int Structs();
 
 
 int main()
 {
     printf("Program is below!\n");
 
-    QuizProgram();
+    // QuizProgram();
+    Structs();
    // Pointers();
    //  Bubble();
 

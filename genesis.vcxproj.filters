@@ -75,5 +75,8 @@
     <ClCompile Include="BubblePointer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Structs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

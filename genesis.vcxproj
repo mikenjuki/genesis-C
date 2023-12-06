@@ -146,6 +146,7 @@
     <ClCompile Include="Recursion.c" />
     <ClCompile Include="Sales.c" />
     <ClCompile Include="Search.c" />
+    <ClCompile Include="Structs.c" />
     <ClCompile Include="TempConverter.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
