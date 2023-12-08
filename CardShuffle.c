@@ -3,96 +3,108 @@
 #include <time.h>
 #include <stdbool.h>
 
-#define FSIZE 13
-#define SSIZE 4
 
-void shuffle(int [][FSIZE]);
-void deal(const int[][FSIZE], const char *[], const char *[]);
+typedef struct {
+	const char* face;
+	const char* suit;
+} Card;
+
+void fillDeck(Card * const, const char* [], const char* []);
+void shuffle(Card * const);
+void deal(const Card* const);
 
 int CardShuffle()
 {
 	printf("\nFrom shuffle\n");
 
-	const char* suit[SSIZE] = { "Hearts", "Diamonds", "Clubs", "Spades" };
-	const char* face[FSIZE] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+	Card deck[52];
 
-	int deck[SSIZE][FSIZE] = { 0 };
+	const char* face[] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+	const char* suit[] = { "Hearts", "Diamonds", "Clubs", "Spades" };
 
 	//call this to randomize the selection later on
 	srand(time(0));
 
+	fillDeck(deck, face, suit);
 	shuffle(deck);
-	deal(deck, face, suit);
+	deal(deck);
 
 	return 0;
 }
 
-void shuffle(int cdeck [][FSIZE])
+
+void fillDeck(Card * const cDeck, const char* cface[], const char* csuit[])
 {
-	//pick random spot in card array and insert number (1 - 52)
-	int card, row, column;
-	for (card = 1; card <= 52 ; card++)
+	int i;
+
+	for (i = 0; i <= 51; i++)
 	{
-		do
-		{
-			row = rand() % SSIZE;
-			column = rand() % FSIZE;
-		} while (cdeck[row][column] != 0);
-
-		cdeck[row][column] = card;
+		cDeck[i].face = cface[i % 13];
+		cDeck[i].suit = csuit[i / 13];
 	}
-
 }
 
-
-/* 
-void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
+void shuffle(Card * const cDeck)
 {
-	int card, row, column;
-	for (card = 1; card <= 52; card++)
-		for (row = 0; row <= SSIZE - 1; row++)
-			for (column = 0; column <= FSIZE - 1; column++)
-				if (cdeck[row][column] == card)
-					printf("%5s of %-8s%c", cface[column], csuit[row], card % 2 == 0 ? '\n' : '\t');
-				
+	
+	int card, row;
+	Card temp;
 
+	for (card = 0; card <= 51 ; card++)
+	{
+			row = rand() % 52;
+			temp = cDeck[card];
+			cDeck[card] = cDeck[row];
+			cDeck[row] = temp;
+	}
 }
-*/
+
+
+
+void deal(const Card* const cDeck)
+{
+	int card;
+
+	for (card = 0; card <= 51; card++)
+		printf("%5s of %-8s%c", cDeck[card].face, cDeck[card].suit, (card + 1) % 2 ? '\t' : '\n');
+				
+}
+
 
 // deal 5 card poker hand
-void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
-{
-	int card, row, column;
-	int cardsDealt = 0;
-	bool pairCheck = false;
-	int pairCounter[FSIZE] = { 0 };
-
-	for (card = 1; card <= 5; card++)
-	{
-		for (row = 0; row <= SSIZE - 1 && cardsDealt < 5; row++)
-		{
-			for (column = 0; column <= FSIZE - 1 && cardsDealt < 5; column++)
-			{
-				if (cdeck[row][column] == card)
-				{
-					printf("%d: %5s of %-8s%c", column, cface[column], csuit[row], card % 2 == 0 ? '\n' : '\t');
-					++pairCounter[column]; 
-					++cardsDealt;
-
-					if (pairCounter[column] == 2)
-					{
-						pairCheck = true;
-					}
-				}
-			}
-
-		}
-	}
-
-	if (pairCheck)
-	{
-	  printf("\nA pair was found\n");
-	}
-	
-}
+//void deal(const int cdeck[][FSIZE], const char* cface[], const char* csuit[])
+//{
+//	int card, row, column;
+//	int cardsDealt = 0;
+//	bool pairCheck = false;
+//	int pairCounter[FSIZE] = { 0 };
+//
+//	for (card = 1; card <= 5; card++)
+//	{
+//		for (row = 0; row <= SSIZE - 1 && cardsDealt < 5; row++)
+//		{
+//			for (column = 0; column <= FSIZE - 1 && cardsDealt < 5; column++)
+//			{
+//				if (cdeck[row][column] == card)
+//				{
+//					printf("%d: %5s of %-8s%c", column, cface[column], csuit[row], card % 2 == 0 ? '\n' : '\t');
+//					++pairCounter[column]; 
+//					++cardsDealt;
+//
+//					if (pairCounter[column] == 2)
+//					{
+//						pairCheck = true;
+//					}
+//				}
+//			}
+//
+//		}
+//	}
+//
+//	if (pairCheck)
+//	{
+//	  printf("\nA pair was found\n");
+//	}
+//	
+//}
 

@@ -13,11 +13,11 @@
 //int Recursion();
 //int Patterns();
 //int Bubble();
-int QuizProgram();
+//int QuizProgram();
 //int Pointers();
-//int CardShuffle();
+int CardShuffle();
 //int BubblePointer();
-int Structs();
+//int Structs();
 
 
 int main()
@@ -29,7 +29,7 @@ int main()
    // Pointers();
    //  Bubble();
 
-    // CardShuffle();
+    CardShuffle();
    // BubblePointer();
 
     return 0;
