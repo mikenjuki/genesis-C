@@ -1,26 +1,26 @@
 #include <stdio.h>
 
-struct card
+typedef struct
 {
-	char* face;
-	char* suit;
-};
+	char* firstName;
+	char* lastName;
+	float gpa;
+} Student;
 
 int Structs()
 {
 	printf("from structs\n");
 
-	struct card a;
-	struct card *aPtr;
+	Student student1 = {"Mike", "Smith", 3.5};
+	Student student2 = {"John", "Gotti", 2.0};
+	Student student3 = {"Sandra", "warsi", 4.0};
+	Student student4 = {"Cleo", "Fraphk", 3.5};
 	
-	a.face = "Ace";
-	a.suit = "Spades";
-	aPtr = &a;
+	Student students[] = { student1, student2, student3, student4};
 
-	//access struct instance members in different ways
-	printf("\v%s%s%s\n", a.face, " of ", a.suit);
-	printf("\v%s%s%s\n", aPtr->face, " of ", aPtr->suit);
-	printf("\v%s%s%s\n", (*aPtr).face, " of ", (*aPtr).suit);
+	
+	printf("%s\n");
+	
 
 	return 0;
 }
