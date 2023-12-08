@@ -2,8 +2,8 @@
 
 typedef struct
 {
-	char* firstName;
-	char* lastName;
+	char firstName[50];
+	char lastName[50];
 	float gpa;
 } Student;
 
@@ -18,9 +18,12 @@ int Structs()
 	
 	Student students[] = { student1, student2, student3, student4};
 
-	
-	printf("%s\n");
-	
+	size_t stdSize = sizeof(students) / sizeof(students[0]);
 
+	for (int i = 0; i < stdSize; i++)
+	{
+		printf("\n%s\n", students[i].firstName);
+	}
+	
 	return 0;
 }
