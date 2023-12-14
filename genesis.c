@@ -15,9 +15,10 @@
 //int Bubble();
 //int QuizProgram();
 //int Pointers();
-int CardShuffle();
+//int CardShuffle();
 //int BubblePointer();
 //int Structs();
+int FileProcessing();
 
 
 int main()
@@ -25,11 +26,13 @@ int main()
     printf("Program is below!\n");
 
     // QuizProgram();
-    Structs();
+    //Structs();
    // Pointers();
    //  Bubble();
 
-    CardShuffle();
+   // CardShuffle();
+    FileProcessing();
+
    // BubblePointer();
 
     return 0;

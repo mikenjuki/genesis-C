@@ -134,6 +134,7 @@
     <ClCompile Include="CardShuffle.c" />
     <ClCompile Include="Circumference.c" />
     <ClCompile Include="Diceroll.c" />
+    <ClCompile Include="FileProcessing.c" />
     <ClCompile Include="genesis.c" />
     <ClCompile Include="GradeSwitch.c" />
     <ClCompile Include="Hypotenuse.c" />
