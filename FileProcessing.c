@@ -9,32 +9,54 @@ int FileProcessing()
 {
 	printf("\nFrom File Processing\n");
 
-	//int account;
-	//char name[30];
-	//double balance;
-	//FILE* cfPtr;
+	/*FILE* fPtr;
 
-	/*if (fopen_s(&cfPtr, "clientFile.dat", "w") != 0) {
+	if (fopen_s(&fPtr, "test.txt", "a") != 0)
+	{
+		printf("File could not be opened\n");
+		return -1;
+	}
+	else {
+		fprintf(fPtr, "\nPatrick Star");
+	}
+
+	fclose(fPtr);*/
+
+	int account;
+	char name[30];
+	double balance;
+	FILE* cfPtr;
+
+	if (fopen_s(&cfPtr, "clientFile.dat", "a") != 0) {
 		printf("File could not be opened\n");
 		return -1;
 	}
 	else {
 		printf("Enter the account number, name, and balance.\n");
-		printf("Enter EOF to complete input.\n");
-		printf("? ");
+		printf("Enter 'exit' to complete input.\n");
+		
 
-		scanf_s("%d%s%lf", &account, name, (unsigned)sizeof(name), &balance);
-
-		while (!feof(stdin)) {
-			fprintf(cfPtr, "%d %s %.2f\n", account, name, balance);
+		while (1) {
 			printf("? ");
-			scanf_s("%d%s%lf", &account, name, (unsigned)sizeof(name), &balance);
+			int result = scanf_s("%d%s%lf", &account, name, (unsigned)sizeof(name), &balance);
+
+			if (result == EOF || result < 3) {
+				printf("Invalid input format or EOF reached.\n");
+				break;
+			}
+
+			if (strcmp(name, "exit") == 0) {
+				printf("Terminating input.\n");
+				break;
+			}
+
+			fprintf(cfPtr, "%d %s %.2f\n", account, name, balance);
 		}
 
 		fclose(cfPtr);
-	}*/
+	}
 
-	checkDate();
+
 	return 0;
 }
 
@@ -58,10 +80,10 @@ int checkDate() {
 	}
 	else {
 		printf("Error in formatting date and time\n");
-		return -1; 
+		return -1;
 	}
 
-	return 0; 
+	return 0;
 }
 
 
