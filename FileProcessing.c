@@ -2,27 +2,16 @@
 
 #include <stdio.h>
 #include <time.h>
+#include <stdbool.h>
 
 int checkDate();
+void feofTest();
 
 int FileProcessing()
 {
 	printf("\nFrom File Processing\n");
 
-	/*FILE* fPtr;
-
-	if (fopen_s(&fPtr, "test.txt", "a") != 0)
-	{
-		printf("File could not be opened\n");
-		return -1;
-	}
-	else {
-		fprintf(fPtr, "\nPatrick Star");
-	}
-
-	fclose(fPtr);*/
-
-	int account;
+	/*int account;
 	char name[30];
 	double balance;
 	FILE* cfPtr;
@@ -37,11 +26,21 @@ int FileProcessing()
 		
 
 		while (1) {
-			printf("? ");
+			printf("- ");
 			int result = scanf_s("%d%s%lf", &account, name, (unsigned)sizeof(name), &balance);
 
-			if (result == EOF || result < 3) {
-				printf("Invalid input format or EOF reached.\n");
+			//if (result == EOF || result < 3) {
+			//	printf("Invalid input format or EOF reached.\n");
+			//	break;
+			//}
+
+			if (result == EOF) {
+				printf("EOF reached.\n");
+				break;
+			}
+
+			if (result < 3) {
+				printf("Invalid input format.\n");
 				break;
 			}
 
@@ -51,11 +50,13 @@ int FileProcessing()
 			}
 
 			fprintf(cfPtr, "%d %s %.2f\n", account, name, balance);
-		}
+		} 
 
 		fclose(cfPtr);
 	}
+	*/
 
+	feofTest();
 
 	return 0;
 }
@@ -87,5 +88,31 @@ int checkDate() {
 }
 
 
+void feofTest()
+{
+	printf("From FEOF Test \n");
 
+	FILE* fPtr;
+	int c;
+
+	if (fopen_s(&fPtr, "fTest.txt", "r") != 0)
+	{
+		printf("ERR: Could not open file\n");
+		return 1;
+	}
+	/*else {
+		fprintf(fPtr, "%s", "This is a test\n to print out characters.\n");
+	}*/
+
+	while (true)
+	{
+		c = fgetc(fPtr);
+
+		if (feof(fPtr)) break;
+
+		printf("%c", c);
+	}
+	 
+	fclose(fPtr);
+}
 
