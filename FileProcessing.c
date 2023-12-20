@@ -122,5 +122,31 @@ void creditData()
 {
 	printf("From credit data func");
 
+	//the struct
+	typedef struct {
+		int acctNum;
+		char lastName[20];
+		char firstName[20];
+		double balance;
+	} CreditClient;
+
+	int i;
+	CreditClient blankClient = {0, "", "", 0.0};
+	FILE *cdfPtr;
+
+	if (fopen_s(&cdfPtr, "credit.dat", "w") != 0)
+	{
+		printf("ERR: File could not be opened.");
+	}
+	else {
+
+		for ( i = 1; i <= 100; i++)
+		{
+			fwrite(&blankClient, sizeof(CreditClient), 1, cdfPtr);
+		}
+
+		fclose(cdfPtr);
+	}
+
 }
 
