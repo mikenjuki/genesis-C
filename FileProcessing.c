@@ -90,37 +90,37 @@ int checkDate() {
 }
 
 
-void feofTest()
-{
-	printf("From FEOF Test \n");
-
-	FILE* fPtr;
-	int c;
-
-	if (fopen_s(&fPtr, "fTest.txt", "r") != 0)
-	{
-		printf("ERR: Could not open file\n");
-		return 1;
-	}
-	/*else {
-		fprintf(fPtr, "%s", "This is a test\n to print out characters.\n");
-	}*/
-
-	while (true)
-	{
-		c = fgetc(fPtr);
-
-		if (feof(fPtr)) break;
-
-		printf("%c", c);
-	}
-	 
-	fclose(fPtr);
-}
+//void feofTest()
+//{
+//	printf("From FEOF Test \n");
+//
+//	FILE* fPtr;
+//	int c;
+//
+//	if (fopen_s(&fPtr, "fTest.txt", "r") != 0)
+//	{
+//		printf("ERR: Could not open file\n");
+//		return 1;
+//	}
+//	/*else {
+//		fprintf(fPtr, "%s", "This is a test\n to print out characters.\n");
+//	}*/
+//
+//	while (true)
+//	{
+//		c = fgetc(fPtr);
+//
+//		if (feof(fPtr)) break;
+//
+//		printf("%c", c);
+//	}
+//	 
+//	fclose(fPtr);
+//}
 
 void creditData()
 {
-	printf("From credit data func");
+	printf("From credit data func\n");
 
 	//the struct
 	typedef struct {
@@ -130,23 +130,44 @@ void creditData()
 		double balance;
 	} CreditClient;
 
-	int i;
-	CreditClient blankClient = {0, "", "", 0.0};
+	int position;
+	CreditClient client = {0, "", "", 0.0};
 	FILE *cdfPtr;
 
-	if (fopen_s(&cdfPtr, "credit.dat", "w") != 0)
+	if (fopen_s(&cdfPtr, "credit.dat", "r+") != 0)
 	{
 		printf("ERR: File could not be opened.");
 	}
-	else {
+	/*else {
+		printf("Enter Account number: (between 1 - 100). To end enter 0.\n");
+		scanf_s("%d", &client.acctNum);
 
-		for ( i = 1; i <= 100; i++)
-		{
-			fwrite(&blankClient, sizeof(CreditClient), 1, cdfPtr);
+		while (client.acctNum != 0)
+		{	
+			if (client.acctNum > 100) {
+				printf("Account number should be between 1 - 100. Please re-enter.\n");
+				continue;
+			}
+
+			printf("Enter lastname, firstname, balance.\n");
+			fscanf_s(stdin, "%s%s%lf", client.lastName, (unsigned)sizeof(client.lastName), client.firstName, (unsigned)sizeof(client.firstName), &client.balance);
+
+
+			position = (client.acctNum - 1) * sizeof(CreditClient);
+			fseek(cdfPtr, position, SEEK_SET);
+			fwrite(&client, sizeof(CreditClient), 1, cdfPtr);
+
+
+			printf("Enter account number.\n");
+			scanf_s("%d", &client.acctNum);
 		}
 
-		fclose(cdfPtr);
-	}
+		
 
+		fclose(cdfPtr);
+	}*/
+
+
+	printf("%zu", sizeof(CreditClient));
 }
 
