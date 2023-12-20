@@ -6,6 +6,7 @@
 
 int checkDate();
 void feofTest();
+void creditData();
 
 int FileProcessing()
 {
@@ -56,8 +57,9 @@ int FileProcessing()
 	}
 	*/
 
-	feofTest();
-
+	// feofTest();
+	creditData();
+		
 	return 0;
 }
 
@@ -114,5 +116,11 @@ void feofTest()
 	}
 	 
 	fclose(fPtr);
+}
+
+void creditData()
+{
+	printf("From credit data func");
+
 }
 
