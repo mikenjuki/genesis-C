@@ -24,7 +24,7 @@ int FileProcessing()
 	else {
 		printf("Enter the account number, name, and balance.\n");
 		printf("Enter 'exit' to complete input.\n");
-		
+
 
 		while (1) {
 			printf("- ");
@@ -51,7 +51,7 @@ int FileProcessing()
 			}
 
 			fprintf(cfPtr, "%d %s %.2f\n", account, name, balance);
-		} 
+		}
 
 		fclose(cfPtr);
 	}
@@ -59,7 +59,7 @@ int FileProcessing()
 
 	// feofTest();
 	creditData();
-		
+
 	return 0;
 }
 
@@ -123,19 +123,19 @@ void creditData()
 	printf("From credit data func\n");
 
 	//the struct
-	typedef struct {
+	struct CreditClient {
 		int acctNum;
 		char lastName[20];
 		char firstName[20];
 		double balance;
-	} CreditClient;
+	};
 
 	int position;
-	CreditClient client = {0, "", "", 0.0};
-	FILE *cdfPtr;
+	struct CreditClient client = { 0, "", "", 0.0 };
+	FILE* cdfPtr;
 
 	// create and write data
-	if (fopen_s(&cdfPtr, "credit.txt", "r+") != 0)
+	/*if (fopen_s(&cdfPtr, "credit.txt", "r+") != 0)
 	{
 		printf("ERR: File could not be opened.");
 	}
@@ -144,7 +144,7 @@ void creditData()
 		scanf_s("%d", &client.acctNum);
 
 		while (client.acctNum != 0)
-		{	
+		{
 			if (client.acctNum > 100) {
 				printf("Account number should be between 1 - 100. Please re-enter.\n");
 				continue;
@@ -154,40 +154,40 @@ void creditData()
 			fscanf_s(stdin, "%s%s%lf", client.lastName, (unsigned)sizeof(client.lastName), client.firstName, (unsigned)sizeof(client.firstName), &client.balance);
 
 
-			position = (client.acctNum - 1) * sizeof(CreditClient);
+			position = (client.acctNum - 1) * sizeof(struct CreditClient);
 			fseek(cdfPtr, position, SEEK_SET);
-			fwrite(&client, sizeof(CreditClient), 1, cdfPtr);
+			fwrite(&client, sizeof(struct CreditClient), 1, cdfPtr);
 
 
 			printf("Enter account number.\n");
 			scanf_s("%d", &client.acctNum);
 		}
 
-		
+
 
 		fclose(cdfPtr);
-	}
+	}*/
 
 	//read data
-	//if (fopen_s(&cdfPtr, "credit.txt", "r") != 0)
-	//{
-	//	printf("ERR: File could not be opened.");
-	//}
-	//else {
-	//	printf("%-6s%-16s%-11s%10s\n", "Acct", "Last Name", "First Name", "Balance");
+	if (fopen_s(&cdfPtr, "credit.dat", "r") != 0)
+	{
+		printf("ERR: File could not be opened.");
+	}
+	else {
+		printf("%-6s%-16s%-11s%10s\n", "Acct", "Last Name", "First Name", "Balance");
 
-	//	while (!feof(cdfPtr))
-	//	{
-	//		//if (feof(cdfPtr)) break;
-	//		fread(&client, sizeof(CreditClient), 1, cdfPtr);
+		while (!feof(cdfPtr))
+		{
+			//if (feof(cdfPtr)) break;
+			fread(&client, sizeof(struct CreditClient), 1, cdfPtr);
 
-	//		if (client.acctNum != 0)
-	//		{
-	//			printf("%-6d%-16s%-11s%10.2f\n", client.acctNum, client.lastName, client.firstName, client.balance);
-	//		}
-	//	}
-	//	fclose(cdfPtr);
-	//}
+			if (client.acctNum != 0)
+			{
+				printf("%-6d%-16s%-11s%10.2f\n", client.acctNum, client.lastName, client.firstName, client.balance);
+			}
+		}
+		fclose(cdfPtr);
+	}
 
 }
 

@@ -18,7 +18,8 @@
 //int CardShuffle();
 //int BubblePointer();
 //int Structs();
-int FileProcessing();
+// int FileProcessing();
+int TextEditor();
 
 
 int main()
@@ -30,10 +31,12 @@ int main()
    // Pointers();
    //  Bubble();
    // CardShuffle();
-    FileProcessing();
+   // FileProcessing();
 
    // BubblePointer();
 
+    TextEditor();
+        
     return 0;
 }
 
