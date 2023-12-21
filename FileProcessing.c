@@ -134,11 +134,12 @@ void creditData()
 	CreditClient client = {0, "", "", 0.0};
 	FILE *cdfPtr;
 
-	if (fopen_s(&cdfPtr, "credit.dat", "r+") != 0)
+	// create and write data
+	if (fopen_s(&cdfPtr, "credit.txt", "r+") != 0)
 	{
 		printf("ERR: File could not be opened.");
 	}
-	/*else {
+	else {
 		printf("Enter Account number: (between 1 - 100). To end enter 0.\n");
 		scanf_s("%d", &client.acctNum);
 
@@ -165,9 +166,33 @@ void creditData()
 		
 
 		fclose(cdfPtr);
-	}*/
+	}
 
+	//read data
+	//if (fopen_s(&cdfPtr, "credit.txt", "r") != 0)
+	//{
+	//	printf("ERR: File could not be opened.");
+	//}
+	//else {
+	//	printf("%-6s%-16s%-11s%10s\n", "Acct", "Last Name", "First Name", "Balance");
 
-	printf("%zu", sizeof(CreditClient));
+	//	while (!feof(cdfPtr))
+	//	{
+	//		//if (feof(cdfPtr)) break;
+	//		fread(&client, sizeof(CreditClient), 1, cdfPtr);
+
+	//		if (client.acctNum != 0)
+	//		{
+	//			printf("%-6d%-16s%-11s%10.2f\n", client.acctNum, client.lastName, client.firstName, client.balance);
+	//		}
+	//	}
+	//	fclose(cdfPtr);
+	//}
+
 }
 
+
+// printf("%zu", sizeof(CreditClient));
+
+
+//!feof(cdfPtr)
