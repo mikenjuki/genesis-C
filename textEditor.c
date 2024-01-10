@@ -65,9 +65,10 @@ int enterChoice()
 //should create a file and let you write notes into it.
 void createFile()
 {
+    printf("Creating file...\n");
+
     struct Note one_note = {0, ""};
 
-    printf("from create file.\n");
 
     char fileName[50];
 
