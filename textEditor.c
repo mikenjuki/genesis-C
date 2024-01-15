@@ -69,8 +69,8 @@ void createFile()
 
     struct Note one_note = {0, ""};
 
-
     char fileName[50];
+    char newCh;
 
     printf("Pick a name for the file: ");
     scanf_s("%s", fileName, (unsigned)sizeof(fileName));
@@ -95,7 +95,7 @@ void createFile()
 
         //later use date
         printf("Write your note below. (2500 characters max)\n");
-        getchar(); // Clear the newline character left in the buffer
+        newCh = getchar(); // Clear the newline character left in the buffer
         fgets(one_note.note, sizeof(one_note.note), stdin);
 
         fwrite(&one_note, sizeof(struct Note), 1, fPtr);
