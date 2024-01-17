@@ -5,6 +5,7 @@ int enterChoice();
 void createFile();
 void updateFile();
 void deleteFile();
+void readNote();
 
 //note struct
  struct Note{
@@ -31,6 +32,9 @@ int TextEditor()
         case 3:
             deleteFile();
             break;
+        case 4:
+            readNote();
+            break;
         case 0:
             printf("Exiting program.\n");
             break;
@@ -50,13 +54,19 @@ int TextEditor()
 int enterChoice()
 {
 	//user choices
-	char* choice1 = { "1 - Create a new file." };
-	char* choice2 = { "2 - Update existing file." };
-	char* choice3 = { "3 - Delete a file." };
+    char* choices[] = {
+       "1 - Create a new file.",
+       "2 - Update existing file.",
+       "3 - Delete a file.",
+       "4 - Read a note."
+    };
 
 	int userChoice;
 
-	printf("\nPick an option from below or enter 0 to quit program.\n%s\v%s\v%s\v\n", choice1, choice2, choice3);
+    printf("\nPick an option from below or enter 0 to quit program.\n");
+    for (int i = 0; i < sizeof(choices) / sizeof(choices[0]); ++i) {
+        printf("%s\n", choices[i]);
+    }
 	scanf_s("%d", &userChoice);
 
 	return userChoice;
@@ -112,4 +122,45 @@ void updateFile()
 void deleteFile()
 {
     printf("from delete file.\n");
+}
+
+void readNote()
+{
+    char fileName[50];
+    int note_id;
+
+    printf("from read note.\n");
+
+    printf("\nEnter the name of the text file to read a note from: ");
+    scanf_s("%s", fileName, (unsigned)sizeof(fileName));
+
+    strcat_s(fileName, sizeof(fileName), ".txt");
+
+    FILE* fPtr;
+
+    if (fopen_s(&fPtr, fileName, "r") != 0) {
+        printf("ERR: File could not be opened.\n");
+        return;
+    }
+
+    printf("\nEnter noteID for the note you want to read: ");
+    scanf_s("%d", &note_id);
+
+    struct Note one_note;
+
+    while (fread(&one_note, sizeof(struct Note), 1, fPtr) == 1) {
+        if (one_note.noteID == note_id) {
+            printf("Note ID: %d\n", one_note.noteID);
+            printf("Note Content: %s\n", one_note.note);
+            break;
+        }
+    }
+
+    /*if (fread(&one_note, sizeof(struct Note), 1, fPtr) == 0) {
+        printf("ERR: Error reading note from file.\n");
+        fclose(fPtr);
+        return;
+    }*/
+
+    fclose(fPtr);
 }
