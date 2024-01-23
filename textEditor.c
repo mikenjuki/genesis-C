@@ -3,7 +3,7 @@
 
 int enterChoice();
 void createFile();
-void updateFile();
+void updateNote();
 void deleteFile();
 void readNote();
 
@@ -27,7 +27,7 @@ int TextEditor()
            createFile();
             break;
         case 2:
-            updateFile();
+            updateNote();
             break;
         case 3:
             deleteFile();
@@ -56,7 +56,7 @@ int enterChoice()
 	//user choices
     char* choices[] = {
        "1 - Create a new file.",
-       "2 - Update existing file.",
+       "2 - Update existing note.",
        "3 - Delete a file.",
        "4 - Read a note."
     };
@@ -67,6 +67,7 @@ int enterChoice()
     for (int i = 0; i < sizeof(choices) / sizeof(choices[0]); ++i) {
         printf("%s\n", choices[i]);
     }
+    printf("\n");
 	scanf_s("%d", &userChoice);
 
 	return userChoice;
@@ -100,7 +101,7 @@ void createFile()
         if (one_note.noteID <= 0) {
             printf("ERR: Note ID needs to be above 0!");
             fclose(fPtr); // Close the file before returning
-            return; // Return to terminate the function
+            return; 
         }
 
         //later use date
@@ -114,9 +115,71 @@ void createFile()
 
 }
 
-void updateFile()
+void updateNote()
 {
-    printf("from update file.\n");
+    printf("from update note.\n");
+
+    char fileName[50];
+    int note_id;
+    char new_note[2500];
+    char newCh;
+
+
+
+    printf("Enter name of text file containing the note to be updated: ");
+    fgets(fileName, sizeof(fileName), stdin);
+    fileName[strcspn(fileName, "\n")] = '\0';
+
+    strcat_s(fileName, sizeof(fileName), ".txt");
+
+    FILE* fPtr;
+
+    if (fopen_s(&fPtr, fileName, "r+") != 0) {
+        printf("ERR: File could not be opened.\n");
+        return;
+    }
+
+    printf("\nEnter noteID for the note you want to update: ");
+    scanf_s("%d", &note_id);
+
+    struct Note one_note;
+
+    while (fread(&one_note, sizeof(struct Note), 1, fPtr) == 1) {
+        if (one_note.noteID == note_id) {
+            printf("%s%10s", "Note ID", "Note");
+            printf("\n%d%18s", one_note.noteID, one_note.note);
+            printf("\nEnter new note to update:");
+
+            newCh = getchar();
+            fgets(one_note.note, sizeof(one_note.note), stdin);
+           /* new_note[strcspn(new_note, "\n")] = '\0';*/
+
+            size_t newlinePosition = strcspn(new_note, "\n");
+            if (newlinePosition < sizeof(new_note)) {
+                new_note[newlinePosition] = '\0';
+            }
+            else {
+             
+                printf("Warning: Note truncated as newline character not found within the array.\n");
+            }
+            strcpy_s(one_note.note, sizeof(one_note.note), new_note);
+
+
+            // Move the file pointer to the beginning of the current record
+            fpos_t currentPos;
+            fgetpos(fPtr, &currentPos);
+            fsetpos(fPtr, &currentPos);
+
+            fwrite(&one_note, sizeof(struct Note), 1, fPtr);
+
+            printf("Note updated successfully.\n");
+
+            break;
+        }
+    }
+    printf("Note with ID %d not found in the file.\n", note_id);
+    fclose(fPtr);
+
 }
 
 void deleteFile()
@@ -155,12 +218,6 @@ void readNote()
             break;
         }
     }
-
-    /*if (fread(&one_note, sizeof(struct Note), 1, fPtr) == 0) {
-        printf("ERR: Error reading note from file.\n");
-        fclose(fPtr);
-        return;
-    }*/
 
     fclose(fPtr);
 }
